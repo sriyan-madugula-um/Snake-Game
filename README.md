@@ -1,1 +1,1 @@
-Snake Game on Terminal
+# Snake Game on Terminal
