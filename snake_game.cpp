@@ -8,8 +8,8 @@ using namespace std;
 
 class SnakeGame {
     bool gameover;
-    const int width = 5; // Gameboard dimensions
-    const int height = 2;
+    const int width = 10; // Gameboard dimensions
+    const int height = 10;
     int x, y, fruitX, fruitY, score; // Coordinates of head and fruit
     int score_increment = 10; // How much score increases every time fruit is hit
     int tailX[100], tailY[100]; // Stores coordinates of tail locations
