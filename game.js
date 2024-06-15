@@ -15,10 +15,24 @@ let food = {
 document.addEventListener('keydown', changeDirection);
 
 function changeDirection(event) {
-    if (event.keyCode === 37 && direction !== 'RIGHT') direction = 'LEFT';
-    if (event.keyCode === 38 && direction !== 'DOWN') direction = 'UP';
-    if (event.keyCode === 39 && direction !== 'LEFT') direction = 'RIGHT';
-    if (event.keyCode === 40 && direction !== 'UP') direction = 'DOWN';
+    const key = event.keyCode;
+    const goingUp = direction === 'UP';
+    const goingDown = direction === 'DOWN';
+    const goingRight = direction === 'RIGHT';
+    const goingLeft = direction === 'LEFT';
+
+    if ((key === 37 || key === 65) && !goingRight) { // Left arrow or 'A'
+        direction = 'LEFT';
+    }
+    if ((key === 38 || key === 87) && !goingDown) { // Up arrow or 'W'
+        direction = 'UP';
+    }
+    if ((key === 39 || key === 68) && !goingLeft) { // Right arrow or 'D'
+        direction = 'RIGHT';
+    }
+    if ((key === 40 || key === 83) && !goingUp) { // Down arrow or 'S'
+        direction = 'DOWN';
+    }
 }
 
 function draw() {
